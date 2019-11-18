@@ -22,7 +22,10 @@ var_dump($config);
 
 $app = Factory::officialAccount($config);
 
+var_dump($app);
+
 $response = $app->server->serve();
 
+var_dump($response);
 // 将响应输出
 $response->send();exit;
