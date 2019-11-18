@@ -18,6 +18,8 @@ $config = [
     //...
 ];
 
+var_dump($config);
+
 $app = Factory::officialAccount($config);
 
 $response = $app->server->serve();
