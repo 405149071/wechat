@@ -2,13 +2,14 @@
 
 namespace app\admin\controller;
 
+
 use EasyWeChat\Factory;
 /**
  * 微信测试
  * Class Index
  * @package app\admin\controller
  */
-class Wechat extends Controller
+class Wechat extends \think\Controller
 {
     /**
      * 后台首页

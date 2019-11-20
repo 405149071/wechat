@@ -16,9 +16,14 @@ class ComposerStaticInitac6205d66f7bd5440cd5245c494f7036
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'f0e7e63bbb278a92db02393536748c5f' => __DIR__ . '/..' . '/overtrue/wechat/src/Kernel/Support/Helpers.php',
         '6747f579ad6817f318cc3a7e7a0abb93' => __DIR__ . '/..' . '/overtrue/wechat/src/Kernel/Helpers.php',
+        '0e1a642d4bee6d131ff3aa76738d7d2c' => __DIR__ . '/..' . '/naixiaoxin/think-wechat/src/helper.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        't' => 
+        array (
+            'think\\composer\\' => 15,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php72\\' => 23,
@@ -46,6 +51,10 @@ class ComposerStaticInitac6205d66f7bd5440cd5245c494f7036
         array (
             'Overtrue\\Socialite\\' => 19,
         ),
+        'N' => 
+        array (
+            'Naixiaoxin\\ThinkWechat\\' => 23,
+        ),
         'M' => 
         array (
             'Monolog\\' => 8,
@@ -64,6 +73,10 @@ class ComposerStaticInitac6205d66f7bd5440cd5245c494f7036
     );
 
     public static $prefixDirsPsr4 = array (
+        'think\\composer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/topthink/think-installer/src',
+        ),
         'Symfony\\Polyfill\\Php72\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
@@ -135,6 +148,10 @@ class ComposerStaticInitac6205d66f7bd5440cd5245c494f7036
         'Overtrue\\Socialite\\' => 
         array (
             0 => __DIR__ . '/..' . '/overtrue/socialite/src',
+        ),
+        'Naixiaoxin\\ThinkWechat\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/naixiaoxin/think-wechat/src',
         ),
         'Monolog\\' => 
         array (

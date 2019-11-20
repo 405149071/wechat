@@ -15,4 +15,5 @@ return array(
     '37a3dc5111fe8f707ab4c132ef1dbc62' => $vendorDir . '/guzzlehttp/guzzle/src/functions_include.php',
     'f0e7e63bbb278a92db02393536748c5f' => $vendorDir . '/overtrue/wechat/src/Kernel/Support/Helpers.php',
     '6747f579ad6817f318cc3a7e7a0abb93' => $vendorDir . '/overtrue/wechat/src/Kernel/Helpers.php',
+    '0e1a642d4bee6d131ff3aa76738d7d2c' => $vendorDir . '/naixiaoxin/think-wechat/src/helper.php',
 );
