@@ -13,3 +13,4 @@ composer.lock
 .env
 logs
 runtime
+database.php

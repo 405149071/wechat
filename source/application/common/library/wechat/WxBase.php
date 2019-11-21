@@ -14,6 +14,7 @@ class WxBase
 {
     protected $appId;
     protected $appSecret;
+    protected $token;
 
     protected $error;
 
@@ -23,10 +24,11 @@ class WxBase
      * @param $appId
      * @param $appSecret
      */
-    public function __construct($appId, $appSecret)
+    public function __construct($appId, $appSecret, $token)
     {
         $this->appId = $appId;
         $this->appSecret = $appSecret;
+        $this->token = $token;
     }
 
     /**
@@ -124,6 +126,23 @@ class WxBase
     public function getError()
     {
         return $this->error;
+    }
+
+    //验证签名
+    public function valid()
+    {
+        $echoStr = $_GET["echostr"];
+        $signature = $_GET["signature"];
+        $timestamp = $_GET["timestamp"];
+        $nonce = $_GET["nonce"];
+        $tmpArr = array($this->token, $timestamp, $nonce);
+        sort($tmpArr, SORT_STRING);
+        $tmpStr = implode($tmpArr);
+        $tmpStr = sha1($tmpStr);
+        if($tmpStr == $signature){
+            echo $echoStr;
+            exit;
+        }
     }
 
 }

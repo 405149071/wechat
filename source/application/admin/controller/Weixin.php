@@ -2,21 +2,20 @@
 
 namespace app\admin\controller;
 
-use EasyWeChat\Factory;
+use app\common\library\wechat;
 /**
  * 微信测试
  * Class Index
  * @package app\admin\controller
  */
-class Wechat extends Controller
+class Weixin extends \think\Controller
 {
     /**
      * 后台首页
      * @return mixed
      */
-    public function index()
+    public function valid()
     {
-
 
         $config = [
             'app_id' => 'wxc4d225cdc68bab01',
@@ -26,17 +25,10 @@ class Wechat extends Controller
             //...
         ];
 
-        var_dump($config);
+        $wx = new wechat\WxBase($config['app_id'],$config['secret'],$config['token']);
 
-        $app = Factory::officialAccount($config);
+        $wx->valid();
 
-        var_dump($app);
-
-        $response = $app->server->serve();
-
-        var_dump($response);
-// 将响应输出
-        $response->send();exit;
     }
 
 }
