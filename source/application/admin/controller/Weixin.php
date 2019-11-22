@@ -44,4 +44,15 @@ class Weixin extends \think\Controller
         // 关注后处理在callback中
     }
 
+    /**
+     * 长链接转短链接
+     */
+    public function long2short(){
+        $longurl = 'http://wap.koudaitong.com/v2/showcase/goods?alias=128wi9shh&spm=h56083&redirect_count=1';
+        $wx = new wechat\WxShortUrl();
+        $shorturl = $wx->long2short($longurl);
+        var_dump($shorturl);
+        // '{"errcode":0,"errmsg":"ok","short_url":"https:\/\/w.url.cn\/s\/AmJVFId"}'
+    }
+
 }

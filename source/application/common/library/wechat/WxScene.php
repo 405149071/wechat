@@ -4,7 +4,7 @@ namespace app\common\library\wechat;
 
 /**
  * 场景二维码管理类
- * Class WxUser
+ * Class WxScene
  * @package app\common\library\wechat
  */
 class WxScene extends WxBase
