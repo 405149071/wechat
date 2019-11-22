@@ -47,7 +47,7 @@ class WxSdk extends WxBase
         $postStr = file_get_contents("php://input");
         $this->doLogs($postStr);
         if (!empty($postStr)){
-            //$this->logger("R \r\n".$postStr);
+            //$this->doLogs("R \r\n".$postStr);
             $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
             $RX_TYPE = trim($postObj->MsgType);
 
@@ -89,7 +89,7 @@ class WxSdk extends WxBase
                     $result = "unknown msg type: ".$RX_TYPE;
                     break;
             }
-            $this->logger("T \r\n".$result);
+            $this->doLogs("T \r\n".$result);
             echo $result;
         }else {
             echo "";
