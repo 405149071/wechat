@@ -3,7 +3,7 @@
 namespace app\api\model;
 
 use think\Cache;
-use app\common\library\wechat\WxUser;
+use app\common\library\wechat\WxappUser;
 use app\common\exception\BaseException;
 use app\common\model\User as UserModel;
 use app\api\model\dealer\Referee as RefereeModel;
@@ -85,7 +85,7 @@ class User extends UserModel
         // 获取当前小程序信息
         $wxConfig = Wxapp::getWxappCache();
         // 微信登录 (获取session_key)
-        $WxUser = new WxUser($wxConfig['app_id'], $wxConfig['app_secret']);
+        $WxUser = new WxappUser($wxConfig['app_id'], $wxConfig['app_secret']);
         if (!$session = $WxUser->sessionKey($code))
             throw new BaseException(['msg' => 'session_key 获取失败']);
         return $session;

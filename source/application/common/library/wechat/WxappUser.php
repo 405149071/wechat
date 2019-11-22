@@ -7,7 +7,7 @@ namespace app\common\library\wechat;
  * Class WxUser
  * @package app\common\library\wechat
  */
-class WxUser extends WxBase
+class WxappUser extends WxBase
 {
     /**
      * 获取session_key
