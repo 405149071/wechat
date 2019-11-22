@@ -8,7 +8,7 @@ use app\common\library\wechat;
  * Class Index
  * @package app\admin\controller
  */
-class Weixin extends \think\Controller
+class WechatCallBack extends \think\Controller
 {
     private $config = [
         'app_id' => 'wxc4d225cdc68bab01',
@@ -17,6 +17,19 @@ class Weixin extends \think\Controller
         'response_type' => 'array',
         //...
     ];
+
+    public function callback(){
+        $wx = new wechat\WxSdk(
+            $this->config['app_id'],
+            $this->config['secret'],
+            $this->config['token']);
+
+        if (isset($_GET['echostr'])) {
+            $wx->valid();
+        }else{
+            $wx->responseMsg();
+        }
+    }
     /**
      * 验证签名
      * @return mixed
