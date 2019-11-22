@@ -25,7 +25,7 @@ class Weixin extends \think\Controller
             //...
         ];
 
-        $wx = new wechat\WxBase($config['app_id'],$config['secret'],$config['token']);
+        $wx = new wechat\WxSdk($config['app_id'],$config['secret'],$config['token']);
 
         $wx->valid();
 
