@@ -13,7 +13,7 @@ class WxMenu extends WxBase
     public function createMenu()
     {
         $access_token = $this->getAccessToken();
-//        $this->doLogs("access_token=".$access_token);
+        $this->doLogs("access_token=".$access_token);
         $url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=".$access_token;
         $menuJson = ' {
      "button":[
