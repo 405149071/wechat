@@ -13,14 +13,13 @@ class WxMenu extends WxBase
     public function createMenu()
     {
         $access_token = $this->getAccessToken();
-        $this->doLogs("access_token=".$access_token);
-
+//        $this->doLogs("access_token=".$access_token);
         $url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=".$access_token;
         $menuJson = ' {
      "button":[
      {	
           "type":"click",
-          "name":"今日歌曲",
+          "name":"今日歌曲11",
           "key":"V1001_TODAY_MUSIC"
       },
       {
@@ -28,12 +27,12 @@ class WxMenu extends WxBase
            "sub_button":[
            {	
                "type":"view",
-               "name":"搜索",
+               "name":"搜索11",
                "url":"http://www.soso.com/"
             },
             {
                "type":"click",
-               "name":"赞一下我们",
+               "name":"赞一下我们11",
                "key":"V1001_GOOD"
             }]
        }]

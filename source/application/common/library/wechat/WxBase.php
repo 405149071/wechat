@@ -47,7 +47,9 @@ class WxBase
     protected function getAccessToken()
     {
         $cacheKey = $this->appId . '@access_token';
+//        $this->doLogs('cachkeh1111='.$cacheKey);
         if (!Cache::get($cacheKey)) {
+//            $this->doLogs('1111111111');
             // 请求API获取 access_token
             $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={$this->appId}&secret={$this->appSecret}";
             $result = $this->get($url);
