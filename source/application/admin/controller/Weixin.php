@@ -13,6 +13,7 @@ class Weixin extends \think\Controller
 
     /**
      * 创建菜单
+     * http://wx.me/admin/weixin/createmenu
      */
     public function createMenu(){
         $wx = new wechat\WxMenu();
@@ -23,6 +24,7 @@ class Weixin extends \think\Controller
 
     /**
      * 取得个人信息
+     * http://wx.me/admin/weixin/getuserinfo
      */
     public function getUserInfo(){
         $openid = 'o1R_7twuqjK_GR5pVo6Rrn2p_U0o';
@@ -34,6 +36,7 @@ class Weixin extends \think\Controller
 
     /**
      * 创建永久场景二维码
+     * http://wx.me/admin/weixin/createqr
      */
     public function createQR(){
         $sceneid = '123';
@@ -46,6 +49,7 @@ class Weixin extends \think\Controller
 
     /**
      * 长链接转短链接
+     * http://wx.me/admin/weixin/long2short
      */
     public function long2short(){
         $longurl = 'http://wap.koudaitong.com/v2/showcase/goods?alias=128wi9shh&spm=h56083&redirect_count=1';
