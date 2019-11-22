@@ -9,11 +9,7 @@ namespace app\common\library\wechat;
  */
 class WxUser extends WxBase
 {
-    /**
-     * 获取session_key
-     * @param $code
-     * @return array|mixed
-     */
+
     public function getUserInfo($openid)
     {
         $access_token = $this->getAccessToken();
