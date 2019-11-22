@@ -238,4 +238,11 @@ return [
         'var_page' => 'page',
         'list_rows' => 15,
     ],
+
+    // 微信配置 (平台统一一个微信公众号）
+    'wechat' => [
+        'appid' => 'wxc4d225cdc68bab01',
+        'secret' => 'c772e094ab6d7091db037573394920b4',
+        'token' => 'X9VfZef6ntpPySDT',
+    ],
 ];

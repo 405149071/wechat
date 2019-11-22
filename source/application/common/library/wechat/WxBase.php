@@ -25,8 +25,8 @@ class WxBase
      */
     public function __construct($appId, $appSecret)
     {
-        $this->appId = $appId;
-        $this->appSecret = $appSecret;
+        $this->appId = $appId  ? $appId : config('wechat.appid');
+        $this->appSecret = $appSecret ? $appSecret : config('wechat.secret');
     }
 
     /**
