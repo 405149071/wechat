@@ -45,6 +45,7 @@ class WxSdk extends WxBase
     {
 //        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
         $postStr = file_get_contents("php://input");
+        $this->doLogs($postStr);
         if (!empty($postStr)){
             //$this->logger("R \r\n".$postStr);
             $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
