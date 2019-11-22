@@ -16,6 +16,9 @@ class Weixin extends \think\Controller
      */
     public function createMenu(){
 
+        $menu = new wechat\WxMenu();
+        $menu->createMenu();
+
     }
 
 }
