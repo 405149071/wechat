@@ -38,9 +38,8 @@ class WxMenu extends WxBase
        }]
  }
 ';
-
         $result = $this->post($url, $menuJson);
-        var_dump($result);
+        return $result;
 
     }
 

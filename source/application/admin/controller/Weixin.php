@@ -15,10 +15,19 @@ class Weixin extends \think\Controller
      * 创建菜单
      */
     public function createMenu(){
+        $wx = new wechat\WxMenu();
+        $menu = $wx->createMenu();
+        var_dump($menu);
+    }
 
-        $menu = new wechat\WxMenu();
-        $menu->createMenu();
-
+    /**
+     * 取得个人信息
+     */
+    public function getUserInfo(){
+        $openid = 'o1R_7twuqjK_GR5pVo6Rrn2p_U0o';
+        $wx = new wechat\WxUser();
+        $user = $wx->getUserInfo($openid);
+        var_dump($user);
     }
 
 }
