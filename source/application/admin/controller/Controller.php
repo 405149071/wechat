@@ -42,6 +42,8 @@ class Controller extends \think\Controller
         'passport/login',
         // 微信分享测试页面
         'weixin/share',
+        // 网页授权回调页面
+        'weixin/oauth'
     ];
 
     /**

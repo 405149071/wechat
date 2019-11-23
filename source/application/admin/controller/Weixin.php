@@ -23,7 +23,7 @@ class Weixin extends \think\Controller
     }
 
     /**
-     * 取得个人信息
+     * 取得个人信息（关注用户的信息，未关注用户取不到，需要利用授权接口才行）
      * http://wx.me/admin/weixin/getuserinfo
      */
     public function getUserInfo(){
@@ -31,6 +31,26 @@ class Weixin extends \think\Controller
         $wx = new wechat\WxUser();
         $user = $wx->getUserInfo($openid);
         var_dump($user);
+        // {"subscribe":1,"openid":"o1R_7twuqjK_GR5pVo6Rrn2p_U0o","nickname":"中中","sex":1,"language":"zh_CN","city":"大连","province":"辽宁","country":"中国","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/6YibWqA7MSCg90rMWaJTSvpn3rqUib8Y9YxpbWLyLftk8icYyJbPrgIFrL2ublaM45N1ia2BK5YKnibDkqmqGg7mGaUVjdu6R5HJic\/132","subscribe_time":1574396535,"remark":"","groupid":0,"tagid_list":[],"subscribe_scene":"ADD_SCENE_QR_CODE","qr_scene":0,"qr_scene_str":""}
+    }
+    /**
+     * 取得个人信息（关注用户的信息，未关注用户需要显示授权，已关注用户静默授权即可）
+     * http://wx.me/admin/weixin/getuserinfo
+     */
+    public function oauth(){
+        // 1。 引导用户打开这个页面
+        $redirect_url = 'http://wx.ixzy.xyz/admin/weixin/oauth';
+        $state = '123123'; // 传递回来的参数
+        $appid = 'wxc4d225cdc68bab01';
+        $url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='. $appid .'&redirect_uri='. $redirect_url .'&response_type=code&scope=snsapi_base&state='. $state . '#wechat_redirect';
+        // https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc4d225cdc68bab01&redirect_uri=http://wx.ixzy.xyz/admin/weixin/oauth&response_type=code&scope=snsapi_base&state=123456#wechat_redirect
+        
+//        $openid = 'o1R_7twuqjK_GR5pVo6Rrn2p_U0o';
+//        $wx = new wechat\WxUser();
+//        $user = $wx->getUserInfo($openid);
+//        var_dump($user);
+        $this->view->engine->layout(false);
+        return $this->fetch('oauth');
         // {"subscribe":1,"openid":"o1R_7twuqjK_GR5pVo6Rrn2p_U0o","nickname":"中中","sex":1,"language":"zh_CN","city":"大连","province":"辽宁","country":"中国","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/6YibWqA7MSCg90rMWaJTSvpn3rqUib8Y9YxpbWLyLftk8icYyJbPrgIFrL2ublaM45N1ia2BK5YKnibDkqmqGg7mGaUVjdu6R5HJic\/132","subscribe_time":1574396535,"remark":"","groupid":0,"tagid_list":[],"subscribe_scene":"ADD_SCENE_QR_CODE","qr_scene":0,"qr_scene_str":""}
     }
 
