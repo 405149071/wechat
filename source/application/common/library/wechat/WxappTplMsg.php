@@ -3,11 +3,11 @@
 namespace app\common\library\wechat;
 
 /**
- * 微信模板消息
+ * 微信小程序模板消息
  * Class WxTplMsg
  * @package app\common\library\wechat
  */
-class WxTplMsg extends WxBase
+class WxappTplMsg extends WxBase
 {
     /**
      * 发送模板消息
@@ -19,17 +19,16 @@ class WxTplMsg extends WxBase
     {
         // 微信接口url
         $access_token = $this->getAccessToken();
-        $url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=' . $access_token;
+        $url = 'https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=' . $access_token;
 
         // 构建请求
         $data = [
             'touser' => $params['touser'],
             'template_id' => $params['template_id'],
-            "url" => $params['url'],
+            'page' => $params['page'],
             'form_id' => $params['form_id'],
             'data' => $this->createData($params['data'])
         ];
-
         $result = $this->post($url, json_encode($data, JSON_UNESCAPED_UNICODE));
         // 记录日志
         log_write([

@@ -60,7 +60,31 @@ class Weixin extends \think\Controller
     }
 
     /**
+     * 发送模版消息
+     */
+    public function sendTplMsg(){
+        $openid = 'o1R_7twuqjK_GR5pVo6Rrn2p_U0o';
+        $template_id = 'CAXp3cm9RwlWtOhvYIn-WJ67xpD_Qh5Nv3ik7_6Zxko';
+        $wx = new wechat\WxTplMsg();
+        $param = [
+            'touser' => $openid,
+            'template_id' => $template_id,
+            "url" => 'http://www.baidu.com',
+            'data' => [
+                'first' => '张三',
+                'keyword1' => '新浪俱乐部',
+                'keyword2' => '中关村海龙大礼堂',
+                ]
+        ];
+        $result = $wx->sendTemplateMessage($param);
+        var_dump($result);
+    }
+
+
+
+    /**
      * 分享
+     * http://wx.me/index.php?s=/admin/weixin/share
      */
     public function share(){
         $wx = new wechat\WxJsSdk();
