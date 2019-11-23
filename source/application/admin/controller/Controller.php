@@ -40,6 +40,8 @@ class Controller extends \think\Controller
     protected $notLayoutAction = [
         // 登录页面
         'passport/login',
+        // 微信分享测试页面
+        'weixin/share',
     ];
 
     /**

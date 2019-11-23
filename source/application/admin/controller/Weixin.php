@@ -59,4 +59,17 @@ class Weixin extends \think\Controller
         // '{"errcode":0,"errmsg":"ok","short_url":"https:\/\/w.url.cn\/s\/AmJVFId"}'
     }
 
+    /**
+     * 分享
+     */
+    public function share(){
+        $wx = new wechat\WxJsSdk();
+        $data = $wx->getSignPackage();
+//        var_dump($data);
+        $this->assign('sign',$data);
+//        var_dump('bbbbb');
+        $this->view->engine->layout(false);
+        return $this->fetch('share');
+    }
+
 }
