@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="test">
-用户信息：{{$userinfo}}
+用户信息：{{$info}}
 
 </div>
 </body>

@@ -52,7 +52,8 @@ class Weixin extends \think\Controller
             $this->view->engine->layout(false);
             $this->assign('info',$userinfo);
             return $this->fetch('oauth');
-            // {"subscribe":1,"openid":"o1R_7twuqjK_GR5pVo6Rrn2p_U0o","nickname":"中中","sex":1,"language":"zh_CN","city":"大连","province":"辽宁","country":"中国","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/6YibWqA7MSCg90rMWaJTSvpn3rqUib8Y9YxpbWLyLftk8icYyJbPrgIFrL2ublaM45N1ia2BK5YKnibDkqmqGg7mGaUVjdu6R5HJic\/132","subscribe_time":1574396535,"remark":"","groupid":0,"tagid_list":[],"subscribe_scene":"ADD_SCENE_QR_CODE","qr_scene":0,"qr_scene_str":""}
+            // 关注的用户信息
+            // {"openid":"o1R_7twuqjK_GR5pVo6Rrn2p_U0o","nickname":"中中","sex":1,"language":"zh_CN","city":"大连","province":"辽宁","country":"中国","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTK2B2lS6OYAVW78j8bBfBVydqso3wgy4TEoaxcg3coj5MhdI3yVmqGG3A82mtDfHt3eWZYyS0hf8A\/132","privilege":[]}^M
 
         }
 
