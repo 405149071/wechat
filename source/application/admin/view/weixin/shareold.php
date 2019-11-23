@@ -10,7 +10,7 @@
         nonceStr = "<?php echo $sign['nonceStr'] ?>";
         signature = "<?php echo $sign['signature'] ?>";
 
-        // 这里尝试使用新方法去做分享
+        // 这里的方法即将作废
         // 微信分享
         var weixinShareImgUrl = "http://preview.qiantucdn.com/58pic/35/47/96/28v58PICib8dd58PICtBXy171_PIC2018.jpg!qt324new_nowater";
         var weixinShareLineLink = location.href;
@@ -41,58 +41,6 @@
             jsApiList: ['onMenuShareAppMessage','onMenuShareTimeline','hideMenuItems'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
         });
 
-        wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
-            // 自定义“分享给朋友”及“分享到QQ”按钮的分享内容（1.4.0）
-            wx.updateAppMessageShareData({
-                title: weixinShareShareTitle, // 分享标题
-                desc: weixinShareDescContent, // 分享描述
-                link: weixinShareLineLink, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                imgUrl: weixinShareImgUrl, // 分享图标
-                success: function (res) {
-                    alert('设置成功,已分享');
-                },
-                cancel: function (res) {
-                    alert('已取消');
-                },
-                fail: function (res) {
-                    alert(JSON.stringify(res));
-                }
-            });
-            // 自定义“分享到朋友圈”及“分享到QQ空间”按钮的分享内容（1.4.0）
-            wx.updateTimelineShareData({
-                title: weixinShareShareTitle, // 分享标题
-                link: weixinShareLineLink, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                imgUrl: weixinShareImgUrl, // 分享图标
-                success: function (res) {
-                    alert('设置成功,已分享');
-                },
-                cancel: function (res) {
-                    alert('已取消');
-                },
-                fail: function (res) {
-                    alert(JSON.stringify(res));
-                }
-            });
-            // 获取“分享到腾讯微博”按钮点击状态及自定义分享内容接口
-            wx.onMenuShareWeibo({
-                title: weixinShareShareTitle, // 分享标题
-                desc: weixinShareDescContent, // 分享描述
-                link: weixinShareLineLink, // 分享链接
-                imgUrl: weixinShareImgUrl, // 分享图标
-                success: function () {
-                    // 用户确认分享后执行的回调函数
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                }
-            });
-
-
-        });
-
-
-
-        //自定义“分享给朋友”及“分享到QQ”按钮的分享内容（1.4.0）
         wx.ready(function(){
             wx.onMenuShareTimeline({
                 title: weixinShareShareTitle,
