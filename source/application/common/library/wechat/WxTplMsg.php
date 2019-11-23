@@ -14,6 +14,7 @@ class WxTplMsg extends WxBase
      * @param $params
      * @return bool
      * @throws \app\common\exception\BaseException
+     * http://wx.ixzy.xyz/admin/weixin/sendtplmsg
      */
     public function sendTemplateMessage($params)
     {
@@ -26,7 +27,6 @@ class WxTplMsg extends WxBase
             'touser' => $params['touser'],
             'template_id' => $params['template_id'],
             "url" => $params['url'],
-            'form_id' => $params['form_id'],
             'data' => $this->createData($params['data'])
         ];
 
