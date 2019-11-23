@@ -38,7 +38,8 @@
             timestamp: timestamp, // 必填，生成签名的时间戳
             nonceStr: nonceStr, // 必填，生成签名的随机串
             signature: signature,// 必填，签名，见附录1
-            jsApiList: ['onMenuShareAppMessage','onMenuShareTimeline','hideMenuItems'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            // jsApiList: ['onMenuShareAppMessage','onMenuShareTimeline','hideMenuItems'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            jsApiList: ['updateAppMessageShareData','updateTimelineShareData']
         });
 
         wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
