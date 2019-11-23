@@ -28,7 +28,7 @@ class WxOauth extends WxBase
         // 开始取用户信息
         $infoUrl = "https://api.weixin.qq.com/sns/userinfo?access_token={$access_token}&openid={$openid}&lang=zh_CN";
         $userInfo = $this->get($infoUrl);
-        $this->doLogs('userinfo=' . $userInfo);
+//        $this->doLogs('userinfo=' . $userInfo);
         return $userInfo;
     }
 
