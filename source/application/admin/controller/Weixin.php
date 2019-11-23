@@ -118,7 +118,6 @@ class Weixin extends \think\Controller
         $data = $wx->getSignPackage();
 //        var_dump($data);
         $this->assign('sign',$data);
-//        var_dump('bbbbb');
 
         $this->view->engine->layout(false);
         return $this->fetch('share');

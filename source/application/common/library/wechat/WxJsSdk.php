@@ -58,10 +58,10 @@ class WxJsSdk extends WxBase
 //            $this->doLogs('1111111111');
             $access_token = $this->getAccessToken();
             // 请求API获取 jsapiticket
-            var_dump($access_token);
+//            var_dump($access_token);
             $url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?type=jsapi&access_token={$access_token}";
             $data = json_decode($this->get($url), true);
-            var_dump($data);
+//            var_dump($data);
             if ($data['errcode']) {
                 throw new BaseException(['msg' => "jsapiticket获取失败，错误信息：{$data}"]);
             }
