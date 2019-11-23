@@ -14,8 +14,8 @@
         // 微信分享
         var weixinShareImgUrl = "http://preview.qiantucdn.com/58pic/35/47/96/28v58PICib8dd58PICtBXy171_PIC2018.jpg!qt324new_nowater";
         var weixinShareLineLink = location.href;
-        var weixinShareShareTitle = '微信演练';
-        var weixinShareDescContent = '微信演练微信演练微信演练微信演练';
+        var weixinShareShareTitle = '微信演练new';
+        var weixinShareDescContent = '微信演练微信演练微信演练微信演练new';
 
 
         /*$.ajax({
