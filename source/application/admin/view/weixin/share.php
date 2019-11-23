@@ -12,7 +12,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>分享的习惯</title>
-    <script src="wx.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
     <script Language= javascript>
         var appId,timestamp,nonceStr,signature;
         appId = "<?php echo $sign['appId'] ?>";
