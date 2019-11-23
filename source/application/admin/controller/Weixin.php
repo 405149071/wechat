@@ -38,15 +38,12 @@ class Weixin extends \think\Controller
      * http://wx.me/admin/weixin/getuserinfo
      */
     public function oauth(){
-        if(input('get.code/s')){
-            // 微信端转入
+        $code = input('get.code/s');
+        if($code){
             // 1。 引导用户打开这个页面
-            $redirect_url = 'http://wx.ixzy.xyz/admin/weixin/oauth';
-            $state = '123123'; // 传递回来的参数
-            $appid = 'wxc4d225cdc68bab01';
-            $url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='. $appid .'&redirect_uri='. $redirect_url .'&response_type=code&scope=snsapi_base&state='. $state . '#wechat_redirect';
             // https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc4d225cdc68bab01&redirect_uri=http://wx.ixzy.xyz/admin/weixin/oauth&response_type=code&scope=snsapi_base&state=123456#wechat_redirect
-
+            $wx = new wechat\WxOauth();
+            $wx->oauth($code);
 //        $openid = 'o1R_7twuqjK_GR5pVo6Rrn2p_U0o';
 //        $wx = new wechat\WxUser();
 //        $user = $wx->getUserInfo($openid);
