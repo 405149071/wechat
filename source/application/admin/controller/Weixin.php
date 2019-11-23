@@ -41,15 +41,16 @@ class Weixin extends \think\Controller
         $code = input('get.code/s');
         if($code){
             // 1。 引导用户打开这个页面
+            // 1.1 静默授权
             // https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc4d225cdc68bab01&redirect_uri=http://wx.ixzy.xyz/admin/weixin/oauth&response_type=code&scope=snsapi_base&state=123456#wechat_redirect
+            // 1.2 显示授权
+            // https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc4d225cdc68bab01&redirect_uri=http://wx.ixzy.xyz/admin/weixin/oauth&response_type=code&scope=snsapi_userinfo&state=123456#wechat_redirect
+
             $wx = new wechat\WxOauth();
-            $wx->oauth($code);
-//        $openid = 'o1R_7twuqjK_GR5pVo6Rrn2p_U0o';
-//        $wx = new wechat\WxUser();
-//        $user = $wx->getUserInfo($openid);
-//        var_dump($user);
+            $userinfo = $wx->oauth($code);
+
             $this->view->engine->layout(false);
-            $this->assign('code',input('get.code/s'));
+            $this->assign('info',$userinfo);
             return $this->fetch('oauth');
             // {"subscribe":1,"openid":"o1R_7twuqjK_GR5pVo6Rrn2p_U0o","nickname":"中中","sex":1,"language":"zh_CN","city":"大连","province":"辽宁","country":"中国","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/6YibWqA7MSCg90rMWaJTSvpn3rqUib8Y9YxpbWLyLftk8icYyJbPrgIFrL2ublaM45N1ia2BK5YKnibDkqmqGg7mGaUVjdu6R5HJic\/132","subscribe_time":1574396535,"remark":"","groupid":0,"tagid_list":[],"subscribe_scene":"ADD_SCENE_QR_CODE","qr_scene":0,"qr_scene_str":""}
 
